@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>فروشگاه میوه</title>
+    <style>
+        body { font-family: Tahoma, Arial, sans-serif; padding: 24px; direction: rtl; }
+        .card { border: 1px solid #ddd; padding: 12px; margin: 8px 0; border-radius: 6px; }
+        .price { color: #2b8a3e; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>فروشگاه میوه</h1>
+    <p>میوه‌های موجود:</p>
+    {% if fruits %}
+        {% for f in fruits %}
+            <div class="card">
+                <div><strong>{{ f.name }}</strong></div>
+                <div>قیمت: <span class="price">{{ f.price }}</span> / {{ f.unit }}</div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>میوه‌ای موجود نیست.</p>
+    {% endif %}
+</body>
+</html>
